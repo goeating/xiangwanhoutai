@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>用户列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Preview page of Metronic Admin Theme #1 for statistics, charts, recent events and reports" name="description"
+    />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"
+    />
+    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="./assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css"
+    />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="./assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="./assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="./assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="./assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+        <!-- header start -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- LOGO start -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="./assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- LOGO end -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- 顶部导航菜单 start -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!--通知 start-->
+                        <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="icon-bell"></i>
+                                <span class="badge badge-default"> 7 </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="external">
+                                    <h3>
+                                        <span class="bold">12 条未读</span> 通知</h3>
+                                    <a href="page_user_profile_1.html">查看所有</a>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">刚刚</span>
+                                                <span class="details">
+                                                        <span class="label label-sm label-icon label-success">
+                                                            <i class="fa fa-plus"></i>
+                                                        </span> 新用户注册 </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">3 分钟前</span>
+                                                <span class="details">
+                                                        <span class="label label-sm label-icon label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span> Server #12
+                                                overloaded. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">10 分钟前</span>
+                                                <span class="details">
+                                                        <span class="label label-sm label-icon label-warning">
+                                                            <i class="fa fa-bell-o"></i>
+                                                        </span> Server #2
+                                                not responding. </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="time">14 小时前</span>
+                                                <span class="details">
+                                                        <span class="label label-sm label-icon label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </span> Application
+                                                error. </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--通知 end-->
+                        <!--新用户注册数量 start-->
+                        <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                            <a href="javascript:;" class="dropdown-toggle" style="padding-right: 10px">
+                                <i class="icon-user"></i>
+                                <span class="badge badge-default"> 4 </span>
+                            </a>
+                        </li>
+                        <!--新用户注册数量 end-->
+                        <!-- 用户登录下拉 start -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="./assets/layouts/layout/img/avatar3_small.jpg" />
+                                <span class="username username-hide-on-mobile"> admin </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> 个人信息 </a>
+                                </li>
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_lock_1.html">
+                                        <i class="icon-lock"></i> 锁屏 </a>
+                                </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> 注销 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 用户登录下拉 end -->
+                    </ul>
+                </div>
+                <!-- 顶部导航菜单 end  -->
+            </div>
+        </div>
+        <!-- header end -->
+        <div class="clearfix"> </div>
+        <!-- container start -->
+        <div class="page-container">
+            <!-- 侧边栏 start -->
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
+                        style="padding-top: 20px">
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        <li class="nav-item start">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">控制面板</span>
+                                <span class="selected"></span>
+                                <span class="arrow open"></span>
+                            </a>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">交易中心</h3>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">产品目录</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item active open">
+                                    <a href="commodity.html" class="nav-link ">
+                                        <span class="title">商品管理</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-puzzle"></i>
+                                <span class="title">订单中心</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="components_date_time_pickers.html" class="nav-link ">
+                                        <span class="title">订单列表</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="components_color_pickers.html" class="nav-link ">
+                                        <span class="title">订单查询</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="components_select2.html" class="nav-link ">
+                                        <span class="title">退款处理</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">统计中心</h3>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-bar-chart"></i>
+                                <span class="title">会员统计</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-bar-chart"></i>
+                                <span class="title">销量统计</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-bar-chart"></i>
+                                <span class="title">红包发放统计</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">用户中心</h3>
+                        </li>
+                        <li class="nav-item active open">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-users"></i>
+                                <span class="title">用户管理</span>
+                                <span class="selected"></span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item active ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">用户列表</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="user-level.html" class="nav-link ">
+                                        <span class="title">用户等级</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="elements_ribbons.html" class="nav-link ">
+                                        <span class="title">用户角色</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="elements_overlay.html" class="nav-link ">
+                                        <span class="title">用户角色权限</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="elements_cards.html" class="nav-link ">
+                                        <span class="title">用户升级记录</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">内容管理</h3>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-feed"></i>
+                                <span class="title">文章管理</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="table_static_basic.html" class="nav-link ">
+                                        <span class="title">文章列表</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="table_static_responsive.html" class="nav-link ">
+                                        <span class="title">文章分类</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="table_bootstrap.html" class="nav-link ">
+                                        <span class="title">单页管理</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">单页分类</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="?p=" class="nav-link nav-toggle">
+                                <i class="icon-paper-plane"></i>
+                                <span class="title">FAQ</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="FAQ-list.html" class="nav-link ">
+                                        <span class="title">FAQ列表</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="FAQ-classify.html" class="nav-link ">
+                                        <span class="title">FAQ分类</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="?p=" class="nav-link nav-toggle">
+                                <i class="icon-paper-clip"></i>
+                                <span class="title">公告</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="portlet_boxed.html" class="nav-link ">
+                                        <span class="title">公告列表</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="portlet_light.html" class="nav-link ">
+                                        <span class="title">公告发布</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="heading">
+                            <h3 class="uppercase">系统中心</h3>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-wallet"></i>
+                                <span class="title">支付中心</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="pay.html" class="nav-link ">
+                                        <span class="title">支付方式</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="pay-log.html" class="nav-link ">
+                                        <span class="title">支付日志</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-settings"></i>
+                                <span class="title">设置</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="charts_amcharts.html" class="nav-link ">
+                                        <span class="title">系统信息</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="charts_flotcharts.html" class="nav-link ">
+                                        <span class="title">多媒体</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="charts_flowchart.html" class="nav-link ">
+                                        <span class="title">CDN设置</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="charts_google.html" class="nav-link ">
+                                        <span class="title">云存储</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="charts_echarts.html" class="nav-link ">
+                                        <span class="title">用户设置</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="charts_morris.html" class="nav-link ">
+                                        <span class="title">缓存设置</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">绑定微信</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">订单设置</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
+                                        <span class="title">短信</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item ">
+                                            <a href="charts_highcharts.html" class="nav-link ">短信接口配置</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="charts_highstock.html" class="nav-link ">短信发送记录</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">系统配置</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
+                    <!-- END SIDEBAR MENU -->
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- 侧边栏 end -->
+            <!-- content start -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN PAGE BAR -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">控制面板</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <a href="#">产品目录</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="page-title"> 用户列表
+                        <small>managed datatable samples</small>
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption font-dark">
+                                        <i class="icon-settings font-dark"></i>
+                                        <span class="caption-subject bold uppercase"> 用户列表</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="table-toolbar">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="btn-group">
+                                                    <button id="sample_editable_1_new" class="btn sbold green"> 添加新用户
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
+                                                <span></span>
+                                            </label>
+                                                </th>
+                                                <th> UID </th>
+                                                <th class="text-center"> 用户名 </th>
+                                                <th class="text-center"> 昵称 </th>
+                                                <th class="text-center"> 创建时间 </th>
+                                                <th class="text-center"> 状态 </th>
+                                                <th class="text-center"> 操作 </th>
+                                            </tr>
+                                            <tr role="row" class="filter">
+                                                <td> </td>
+                                                <td>
+                                                    <input type="text" class="form-control form-filter input-sm" name="">                                                    </td>
+                                                <td>
+                                                    <input type="text" class="form-control form-filter input-sm" name="">                                                    </td>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd gradeX">
+                                                <td>
+                                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                <input type="checkbox" class="checkboxes" value="1" />
+                                                <span></span>
+                                            </label>
+                                                </td>
+                                                <td> 123455 </td>
+                                                <td class="text-center">admin</td>
+                                                <td class="text-center">呵呵呵</td>
+                                                <td class="text-center">2014-1-1</td>
+                                                <td class="text-center">
+                                                    <span class="label label-sm label-success"> true </span>
+                                                    <span class="label label-sm label-info"> true </span>
+                                                    <span class="label label-sm label-warning"> true </span>
+                                                    <span class="label label-sm label-danger"> false </span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> 操作
+                                                    <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <i class="icon-docs"></i> 修改 </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript:;">
+                                                                    <i class="fa fa-trash-o"></i> 删除 </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- content end -->
+        </div>
+        <!-- container end -->
+        <!-- 页脚 start -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2016 &copy; 掌锋科技
+                <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
+                <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free"
+                    target="_blank">Purchase Metronic!</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- 页脚 end -->
+    </div>
+    <!--[if lt IE 9]>
+<script src="./assets/global/plugins/respond.min.js"></script>
+<script src="./assets/global/plugins/excanvas.min.js"></script>
+<script src="./assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="./assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="./assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="./assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="./assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <!--<script src="./assets/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>-->
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="./assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="./assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="./assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="./assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+    <script>
+        $(function () {
+            var table = $('#sample_1');
+            table.DataTable({
+                "language": {
+                    "sProcessing": "处理中...",
+                    "sLengthMenu": "显示 _MENU_ 项结果",
+                    "sZeroRecords": "没有匹配结果",
+                    "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+                    "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                    "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜索:",
+                    "sUrl": "",
+                    "sEmptyTable": "表中数据为空",
+                    "sLoadingRecords": "载入中...",
+                    "sInfoThousands": ",",
+                    "oPaginate": {
+                        "sFirst": "首页",
+                        "sPrevious": "上页",
+                        "sNext": "下页",
+                        "sLast": "末页"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": 以升序排列此列",
+                        "sSortDescending": ": 以降序排列此列"
+                    }
+                },
+                "searching": false,
+                "orderCellsTop": true,
+                "pagingType": "bootstrap_full_number",
+                "lengthMenu": [
+                    [5, 10, 15, 20, -1],
+                    [5, 10, 15, 20, "All"]
+                ],
+                "columnDefs": [
+                    {
+                        'orderable': false,
+                        'targets': [0, 2, 3, 6]
+                    },
+                    {
+                        "searchable": false,
+                        "targets": [0]
+                    }
+                ],
+                "order": [
+                    [1, "asc"]
+                ]
+            });
+            table.find('.group-checkable').change(function () {
+                var set = jQuery(this).attr("data-set");
+                var checked = jQuery(this).is(":checked");
+                jQuery(set).each(function () {
+                    if (checked) {
+                        $(this).prop("checked", true);
+                        $(this).parents('tr').addClass("active");
+                    } else {
+                        $(this).prop("checked", false);
+                        $(this).parents('tr').removeClass("active");
+                    }
+                });
+            });
+
+            table.on('change', 'tbody tr .checkboxes', function () {
+                $(this).parents('tr').toggleClass("active");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
